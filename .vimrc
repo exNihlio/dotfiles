@@ -68,6 +68,17 @@ set nu
 "We want a dark background
 set background=dark
 "Four space tabs
-set tabstop=4
-set softtabstop=0 noexpandtab
-set shiftwidth=4
+"set tabstop=4
+"set softtabstop=0 noexpandtab
+"set shiftwidth=4
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+"netrw stuff
+let g:netrw_banner=0
+" Show tabs
+set list
+set listchars=tab:>-
+" Set Vim to variably adjust 
+" Recognize .sls files as yaml
+au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
+" Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
+au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
