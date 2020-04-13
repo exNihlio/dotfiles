@@ -15,3 +15,5 @@ GOPATH="$HOME/coding/go"
 export GOPATH
 PATH="$HOME/.local/bin:$HOME/.bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPATH/bin:$PATH"
 export PATH
+export TERRAFORM_SSH_USER="abeamer"
+export AWS_PROFILE="c2"
