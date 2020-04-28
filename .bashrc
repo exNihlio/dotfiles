@@ -17,3 +17,5 @@ PATH="$HOME/.local/bin:$HOME/.bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPAT
 export PATH
 export TERRAFORM_SSH_USER="abeamer"
 export AWS_PROFILE="c2"
+
+alias ':q'=exit
