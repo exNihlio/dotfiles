@@ -27,3 +27,5 @@ if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc' ];
 if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc'; fi
 
 alias did="vim +'normal Go' +'r!date' ~/did.txt"
+
+alias ':q'=exit
