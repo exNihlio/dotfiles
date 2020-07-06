@@ -16,7 +16,7 @@ export GOPATH
 PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPATH/bin:$PATH"
 export PATH
 export TERRAFORM_SSH_USER="abeamer"
-export AWS_PROFILE="c2"
+#export AWS_PROFILE="c2"
 
 source ~/.functions.sh
 
