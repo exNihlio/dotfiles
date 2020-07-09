@@ -10,6 +10,13 @@ cp .bash_profile ~/
 
 cp .vimrc ~/
 
-cp -R .git ~/
+# Only copy the .git if it hasn't be copied yet
+if [[ -z ~/.git ]]; then
+  cp -R .git ~/
+fi
+
+cp .did.md ~/
+
+cp .gitignore ~/
 
 echo "Installed dotfiles"
