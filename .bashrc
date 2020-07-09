@@ -15,12 +15,10 @@ GOPATH="$HOME/coding/go"
 export GOPATH
 PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPATH/bin:$PATH"
 export PATH
-#export AWS_PROFILE="c2"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc'; fi
-alias did="vim +'normal Go' +'r!date' ~/.did.txt"
+alias did="vim +'normal Go' + 'r!date' ~/.did.md"
 alias ':q'=exit
