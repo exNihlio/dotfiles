@@ -21,5 +21,5 @@ if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc' ];
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc'; fi
 # Source things here
-source .bash_aliases
-source .bash_exports
+source ~/.bash_aliases
+source ~/.bash_exports
