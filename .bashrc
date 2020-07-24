@@ -20,6 +20,6 @@ if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc' ];
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc'; fi
-alias did="vim +'normal Go' +'r!date' ~/.did.md"
-alias ':q'=exit
-export AWS_PROFILE="c2"
+# Source things here
+source .bash_aliases
+source .bash_exports

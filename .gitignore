@@ -4,3 +4,5 @@
 !.gitignore
 !.tmux.conf
 !.gitignore
+!.bash_aliases
+!.bash_exports
