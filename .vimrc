@@ -80,6 +80,7 @@ set listchars=tab:>-
 " Set Vim to variably adjust 
 " Recognize .sls files as yaml
 au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
+au BufNewFile,BufRead,BufReadPost *.template set ft=yaml syntax=yaml
 " Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
 au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType sh set expandtab shiftwidth=2 tabstop=2 softtabstop=2
