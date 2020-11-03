@@ -6,3 +6,5 @@
 !.gitignore
 !.bash_aliases
 !.bash_exports
+!.did.md
+!.bash_functions
