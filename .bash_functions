@@ -6,3 +6,7 @@ function reattach-ssh-sock {
     fi
   fi
 }
+
+function json2yaml {
+    /usr/bin/env python3 -c 'import json, yaml, sys; print(yaml.dump(json.loads(str(sys.stdin.read())), default_flow_style=False))'
+}
