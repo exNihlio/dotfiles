@@ -10,3 +10,7 @@ function reattach-ssh-sock {
 function json2yaml {
     /usr/bin/env python3 -c 'import json, yaml, sys; print(yaml.dump(json.loads(str(sys.stdin.read())), default_flow_style=False))'
 }
+
+function git-commit-count {
+    echo "$(git branch | grep "^\*" | awk {'print $2'}):$(git log | grep -c "^commit")"
+}
