@@ -16,5 +16,5 @@ function git-commit-count {
 }
 
 function docker-ecr-login {
-    aws ecr get-login-password | docker login --user AWS --password-stdin echo "$(aws sts get-caller-idenity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com"
+    aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin $(echo "$(aws sts get-caller-identity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com")
 }
