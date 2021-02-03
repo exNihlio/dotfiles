@@ -14,3 +14,7 @@ function json2yaml {
 function git-commit-count {
     echo "$(git branch | grep "^\*" | awk {'print $2'}):$(git log | grep -c "^commit")"
 }
+
+function docker-ecr-login {
+    aws ecr get-login-password | docker login --user AWS --password-stdin echo "$(aws sts get-caller-idenity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com"
+}
