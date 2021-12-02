@@ -23,3 +23,4 @@ if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.i
 # Source things here
 source ~/.bash_aliases
 source ~/.bash_exports
+source ~/.bash_functions
