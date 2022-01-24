@@ -18,3 +18,16 @@ function git-commit-count {
 function docker-ecr-login {
     aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin $(echo "$(aws sts get-caller-identity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com")
 }
+
+##Run Node.js applications inside of Docker
+function node-docker {
+  docker --version &>/dev/null
+  if (( ${?}!=0 )); then
+    echo "Do you have Docker installed or is docker running?";
+  fi
+  ## By default, search for all node images.
+  NODE_IMAGE_SEARCH="node:lts*"
+  ## This will search all Node.js images that are LTS and select the newest
+  NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
+  docker run -it --rm -v $(pwd):/code ${NODE_DOCKER_IMAGE} node /code/${1}
+}
