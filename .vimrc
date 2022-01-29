@@ -59,6 +59,14 @@ if &term=="xterm"
      set t_Sf=[3%dm
 endif
 
+if &term=="screen-256color"
+    set t_Co=256
+endif
+
+if &term=="xterm-256color"
+    set t_Co=256
+endif
+
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
@@ -84,3 +92,5 @@ au BufNewFile,BufRead,BufReadPost *.template set ft=yaml syntax=yaml
 " Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
 au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType sh set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" Set color scheme here
+silent! colorscheme gruvbox
