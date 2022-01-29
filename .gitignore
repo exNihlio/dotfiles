@@ -9,3 +9,5 @@
 !.did.md
 !.bash_functions
 !profile*.png
+!alacritty.yml
+!.config/alacritty/alacritty.yml
