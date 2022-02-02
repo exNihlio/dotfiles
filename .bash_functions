@@ -31,3 +31,28 @@ function node-docker {
   NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
   docker run -it --rm -v $(pwd):/code ${NODE_DOCKER_IMAGE} node /code/${1}
 }
+
+## Grab a node REPL
+function node-repl-docker {
+  docker --version &>/dev/null
+  if (( ${?}!=0 )); then
+    echo "Do you have Docker installed or is docker running?";
+  fi
+  ## By default, search for all node images.
+  NODE_IMAGE_SEARCH="node:lts*"
+  ## This will search all Node.js images that are LTS and select the newest
+  NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
+  docker run -it --rm ${NODE_DOCKER_IMAGE} node
+}
+
+ function npm-docker {
+  docker --version &>/dev/null
+  if (( ${?}!=0 )); then
+    echo "Do you have Docker installed or is docker running?";
+  fi
+  ## By default, search for all node images.
+  NODE_IMAGE_SEARCH="node:lts*"
+  ## This will search all Node.js images that are LTS and select the newest
+  NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
+  docker run -it --rm ${NODE_DOCKER_IMAGE} npm
+}
