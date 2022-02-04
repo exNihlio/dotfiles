@@ -37,7 +37,7 @@ fi
 
 
 # Only copy the .git if it hasn't be copied yet
-if [[ -z ~/.git ]]; then
+if [[ ! -d ~/.git ]]; then
   cp -R .git ~/
 fi
 
