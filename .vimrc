@@ -81,7 +81,16 @@ set background=dark
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " netrw stuff
-let g:netrw_banner=0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+"" When Vim first starts up, open netrw in vertical explore
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " Show actual tab characters
 set list
