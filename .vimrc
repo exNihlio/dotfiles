@@ -70,27 +70,36 @@ endif
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
-"User specific settings
-"Number line
+""""""""""""""""""""""""""
+" User specific settings "
+""""""""""""""""""""""""""
+" Number line
 set nu
+
 "We want a dark background
 set background=dark
-"Four space tabs
-"set tabstop=4
-"set softtabstop=0 noexpandtab
-"set shiftwidth=4
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-"netrw stuff
+
+" netrw stuff
 let g:netrw_banner=0
-" Show tabs
+
+" Show actual tab characters
 set list
 set listchars=tab:>-
-" Set Vim to variably adjust 
+
+" Set Vim to adjust tabs and file recognition
 " Recognize .sls files as yaml
 au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
+" See .template files as yaml
 au BufNewFile,BufRead,BufReadPost *.template set ft=yaml syntax=yaml
 " Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
 au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType sh set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
 " Set color scheme here
 silent! colorscheme gruvbox
+
+" Vertical split windows to the right and
+" horizontal split windows below.
+set splitright
+set splitbelow
