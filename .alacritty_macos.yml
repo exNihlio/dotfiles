@@ -77,4 +77,4 @@ schemes:
 # Colors (Gruvbox dark)
 colors: *gruvdark
 ## Live reload
-live_config_reload: True
+live_config_reload: true
