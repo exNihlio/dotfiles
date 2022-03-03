@@ -23,7 +23,7 @@ if [[ ${OS_TYPE} == 'Darwin' ]]; then
   if [[ -d ~/.config/alacritty ]]; then
     cp .alacritty_macos.yml ~/.config/alacritty/alacritty.yml
   else
-    mkdir -p ~/.config/.alacritty_macos.yml && cp .alacritty_macos.yml ~/.config/alacritty/alacritty.yml
+    mkdir -p ~/.config/alacritty && cp .alacritty_macos.yml ~/.config/alacritty/alacritty.yml
   fi
 ## Install for Linux
 elif [[ ${OS_TYPE} == 'Linux' ]]; then
@@ -31,7 +31,7 @@ elif [[ ${OS_TYPE} == 'Linux' ]]; then
   if [[ -d ~/.config/alacritty ]]; then
     cp .alacritty_linux.yml ~/.config/alacritty/alacritty.yml
   else
-    mkdir -p ~/.config/.alacritty_linux.yml && cp .alacritty_linux.yml ~/.config/alacritty/alacritty.yml
+    mkdir -p ~/.config/alacritty && cp .alacritty_linux.yml ~/.config/alacritty/alacritty.yml
   fi
 fi
 
