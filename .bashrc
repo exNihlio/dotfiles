@@ -18,7 +18,7 @@ alias emacs='emacs -nw'
 
 GOPATH="$HOME/coding/go"
 
-PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPATH/bin:$PATH"
+PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:$GOPATH/bin:$PATH"
 ## Exports
 export GOPATH
 export PATH
