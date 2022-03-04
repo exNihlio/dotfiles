@@ -1,4 +1,0 @@
-export GIT_EDITOR=vim
-export EDITOR=vim
-#export AWS_PROFILE="c2"
-export AWS_REGION=us-west-2

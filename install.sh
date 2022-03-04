@@ -12,11 +12,6 @@ cp .vimrc ~/
 
 cp .tmux.conf ~/
 
-cp .bash_functions ~/
-
-cp .bash_exports ~/
-
-cp .bash_aliases ~/
 ## Install for Mac
 if [[ ${OS_TYPE} == 'Darwin' ]]; then
   echo "Installing for Darwin"
