@@ -15,12 +15,7 @@ GOPATH="$HOME/coding/go"
 export GOPATH
 PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:/usr/local/bin/go/bin/:$GOPATH/bin:$PATH"
 export PATH
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/path.bash.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/adam.beamer/.local/bin/gcloud/google-cloud-sdk/completion.bash.inc'; fi
-# Source things here
 source ~/.bash_aliases
 source ~/.bash_exports
 source ~/.bash_functions
