@@ -10,11 +10,10 @@ cp .bash_profile ~/
 
 cp .vimrc ~/
 
-cp .tmux.conf ~/
-
-## Install for Mac
+## Install alacritty.yml and .tmux.conf or Mac
 if [[ ${OS_TYPE} == 'Darwin' ]]; then
   echo "Installing for Darwin"
+  cp .tmux_macos.conf ~/.tmux.conf
   if [[ -d ~/.config/alacritty ]]; then
     cp .alacritty_macos.yml ~/.config/alacritty/alacritty.yml
   else
@@ -23,6 +22,7 @@ if [[ ${OS_TYPE} == 'Darwin' ]]; then
 ## Install for Linux
 elif [[ ${OS_TYPE} == 'Linux' ]]; then
   echo "Installing for Linux"
+  cp .tmux_linux.conf ~/.tmux.conf
   if [[ -d ~/.config/alacritty ]]; then
     cp .alacritty_linux.yml ~/.config/alacritty/alacritty.yml
   else
