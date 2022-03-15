@@ -2,7 +2,8 @@
 !.vimrc
 !.bashrc
 !.gitignore
-!.tmux.conf
+!.tmux_macos.conf
+!.tmux_linux.conf
 !.gitignore
 !.bash_aliases
 !.bash_exports

@@ -1,6 +1,8 @@
 .DEFAULT_GOAL := install-system-dotfiles
 ostype := $(shell uname)
-
+git := $(shell which git)
+vim_plugin_path := ~/.vim/pack
+gruvbox := "https://github.com/morhetz/gruvbox"
 detect-os:
 ifeq ($(ostype),Darwin)
 	@echo Detected OS type as Darwin
@@ -31,3 +33,13 @@ install-system-dotfiles: install-tmux-conf
 	cp .bash_profile ~/
 	cp .vimrc ~/
 .PHONY := install-system-dotfiles
+
+#install-vim-plugins: install-system-dotfiles
+#ifeq ($(git),)
+#	@echo Git does not seem to be installed. Install git to add Vim plugins
+#else
+#	@echo Install Vim plugins
+#	mkdir -p ~/.vim/pack/{colors,filemanagers,plugins}/start
+#	git clone https://github.com/morhetz/gruvbox $(vim_plugin_path)/colors/start/
+#endif
+#.PHONY := install-vim-plugins
