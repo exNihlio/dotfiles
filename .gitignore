@@ -9,6 +9,7 @@
 !.did.md
 !.bash_functions
 !profile*.png
+!Makefile
 !.alacritty_macos.yml
 !.alacritty_linux.yml
 !.config/alacritty/alacritty.yml
