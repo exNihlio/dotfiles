@@ -53,6 +53,7 @@ function node-docker {
   docker --version &>/dev/null
   if (( ${?}!=0 )); then
     echo "Do you have Docker installed or is docker running?";
+    exit 1
   fi
   ## By default, search for all node images.
   NODE_IMAGE_SEARCH="node:lts*"
@@ -66,6 +67,7 @@ function node-repl-docker {
   docker --version &>/dev/null
   if (( ${?}!=0 )); then
     echo "Do you have Docker installed or is docker running?";
+    exit 1
   fi
   ## By default, search for all node images.
   NODE_IMAGE_SEARCH="node:lts*"
@@ -74,14 +76,51 @@ function node-repl-docker {
   docker run -it --rm ${NODE_DOCKER_IMAGE} node
 }
 
- function npm-docker {
+function npm-docker {
   docker --version &>/dev/null
   if (( ${?}!=0 )); then
     echo "Do you have Docker installed or is docker running?";
+    exit 1
   fi
   ## By default, search for all node images.
   NODE_IMAGE_SEARCH="node:lts*"
   ## This will search all Node.js images that are LTS and select the newest
   NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
   docker run -it --rm ${NODE_DOCKER_IMAGE} npm
+}
+
+function cdk-vim-docker {
+  ## Determine if host is running Docker or Nerdctl then run our CDK image.
+  ## Reference the CDK image creation here: https://github.com/claire-agentsync/cdk-env
+  CDK_IMAGE_SEARCH="claire-agentsync/cdk"
+  nerdctl --version &>/dev/null
+  if (( ${?}!=0 )); then
+    docker --version &>/dev/null
+    if (( ${?}!=0 )); then
+      echo "Unable to determine container ecosystem. Is Docker or nerdctl installed?" 
+    else
+      CONTAINER_BINARY="docker"
+    fi
+  else
+    CONTAINER_BINARY="nerdctl"
+  fi
+  ${CONTAINER_BINARY} run --rm -it -v ~/.vim/:/root/.vim/ -v $(pwd):/code -v ~/.vimrc:/root/.vimrc claire-agentsync/cdk:v0.1 vim /code
+}
+
+function cdk-init-docker {
+  ## Determine if host is running Docker or Nerdctl then run our CDK image.
+  ## Reference the CDK image creation here: https://github.com/claire-agentsync/cdk-env
+  CDK_IMAGE_SEARCH="claire-agentsync/cdk"
+  nerdctl --version &>/dev/null
+  if (( ${?}!=0 )); then
+    docker --version &>/dev/null
+    if (( ${?}!=0 )); then
+      echo "Unable to determine container ecosystem. Is Docker or nerdctl installed?" 
+    else
+      CONTAINER_BINARY="docker"
+    fi
+  else
+    CONTAINER_BINARY="nerdctl"
+  fi
+  ${CONTAINER_BINARY} run --rm -v $(pwd):/code claire-agentsync/cdk:v0.1 cdk ${@} /code
 }

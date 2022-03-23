@@ -112,3 +112,9 @@ silent! colorscheme gruvbox
 " horizontal split windows below.
 set splitright
 set splitbelow
+
+" Map Ctrl-t + arrorws to tab movement
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
