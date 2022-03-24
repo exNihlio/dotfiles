@@ -1,6 +1,7 @@
 *
 !.vimrc
 !.bashrc
+!.bash_profile
 !.gitignore
 !.tmux_macos.conf
 !.tmux_linux.conf

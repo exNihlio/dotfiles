@@ -91,11 +91,10 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
 augroup END
-
 " Show actual tab characters
 set list
 set listchars=tab:>-
-
+set listchars=space:·
 " Set Vim to adjust tabs and file recognition
 " Recognize .sls files as yaml
 au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
@@ -112,3 +111,9 @@ silent! colorscheme gruvbox
 " horizontal split windows below.
 set splitright
 set splitbelow
+
+" Map Ctrl-t + arrorws to tab movement
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
