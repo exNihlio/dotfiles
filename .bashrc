@@ -25,7 +25,7 @@ export PATH
 export GIT_EDITOR=vim
 export EDITOR=vim
 export AWS_REGION='us-west-2'
-
+export SAM_CLI_TELEMETRY=0
 ## Functions
 function reattach-ssh-sock {
   if [[ ! -z ${SSH_AUTH_SOCK} ]]; then
