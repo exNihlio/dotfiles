@@ -91,11 +91,10 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * :Vexplore
 augroup END
-
 " Show actual tab characters
 set list
 set listchars=tab:>-
-
+set listchars=space:·
 " Set Vim to adjust tabs and file recognition
 " Recognize .sls files as yaml
 au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
