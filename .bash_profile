@@ -4,10 +4,13 @@
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
-
 # User specific environment and startup programs
 if [[ -f /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  brew analytics | grep "are enabled" &>/dev/null
+  if [[ ${?}!=0 ]]; then
+    brew analytics off &>/dev/null
+  fi
 fi
 
 if [[ -d "${HOME}/.nvm" ]]; then
