@@ -116,3 +116,7 @@ map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
+" ISO 8601 Timestamp
+command TS put =strftime('%FT%T%z')
+nnoremap <F5> "=strftime('%FT%T%z')<CR>P
+inoremap <F5> <C-R>=strftime('%FT%T%z')<CR>
