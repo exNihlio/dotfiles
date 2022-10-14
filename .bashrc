@@ -88,39 +88,15 @@ function npm-docker {
   NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
   docker run -it --rm ${NODE_DOCKER_IMAGE} npm
 }
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/clairebeamer/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+if [[ -f "${HOME}/.cargo/env" ]]; then
+  . "${HOME}/.cargo/env"
+fi
 
-function cdk-vim-docker {
-  ## Determine if host is running Docker or Nerdctl then run our CDK image.
-  ## Reference the CDK image creation here: https://github.com/claire-agentsync/cdk-env
-  CDK_IMAGE_SEARCH="claire-agentsync/cdk"
-  nerdctl --version &>/dev/null
-  if (( ${?}!=0 )); then
-    docker --version &>/dev/null
-    if (( ${?}!=0 )); then
-      echo "Unable to determine container ecosystem. Is Docker or nerdctl installed?" 
-    else
-      CONTAINER_BINARY="docker"
-    fi
-  else
-    CONTAINER_BINARY="nerdctl"
-  fi
-  ${CONTAINER_BINARY} run --rm -it -v ~/.vim/:/root/.vim/ -v $(pwd):/code -v ~/.vimrc:/root/.vimrc claire-agentsync/cdk:v0.1 vim /code
-}
-
-function cdk-init-docker {
-  ## Determine if host is running Docker or Nerdctl then run our CDK image.
-  ## Reference the CDK image creation here: https://github.com/claire-agentsync/cdk-env
-  CDK_IMAGE_SEARCH="claire-agentsync/cdk"
-  nerdctl --version &>/dev/null
-  if (( ${?}!=0 )); then
-    docker --version &>/dev/null
-    if (( ${?}!=0 )); then
-      echo "Unable to determine container ecosystem. Is Docker or nerdctl installed?" 
-    else
-      CONTAINER_BINARY="docker"
-    fi
-  else
-    CONTAINER_BINARY="nerdctl"
-  fi
-  ${CONTAINER_BINARY} run --rm -v $(pwd):/code claire-agentsync/cdk:v0.1 cdk ${@} /code
-}
+if [[ -f "${HOME}/.pyenv" ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
