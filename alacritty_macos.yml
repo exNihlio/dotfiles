@@ -1,0 +1,160 @@
+window:
+  dynamic_title: true
+font:
+  normal:
+    family: Fira Code
+    style: Retina
+  italic:
+    family: Fira Code
+    style: Italic
+  bold:
+    family: Fira Code
+    style: Bold
+  bold_italic:
+    family: Fira Code
+    style: Bold Italic
+  size: 17.0
+  use_thin_strokes: true
+cursor:
+  style:
+    shape: Beam
+  blinking: On
+## Schemes
+schemes:
+  gruvbox_light: &gruvlight
+    primary:
+      # hard contrast: background = '#f9f5d7'
+      background: '#fbf1c7'
+      # soft contrast: background = '#f2e5bc'
+      foreground: '#3c3836'
+
+    # Normal colors
+    normal:
+      black:   '#fbf1c7'
+      red:     '#cc241d'
+      green:   '#98971a'
+      yellow:  '#d79921'
+      blue:    '#458588'
+      magenta: '#b16286'
+      cyan:    '#689d6a'
+      white:   '#7c6f64'
+
+    # Bright colors
+    bright:
+      black:   '#928374'
+      red:     '#9d0006'
+      green:   '#79740e'
+      yellow:  '#b57614'
+      blue:    '#076678'
+      magenta: '#8f3f71'
+  ###
+  gruvbox_dark: &gruvdark
+    primary:
+      # hard contrast: background = '#1d2021'
+      background: '#282828'
+      # soft contrast: background = '#32302f'
+      foreground: '#ebdbb2'
+    # Normal colors
+    normal:
+      black:   '#282828'
+      red:     '#cc241d'
+      green:   '#98971a'
+      yellow:  '#d79921'
+      blue:    '#458588'
+      magenta: '#b16286'
+      cyan:    '#689d6a'
+      white:   '#a89984'
+    # Bright colors
+    bright:
+      black:   '#928374'
+      red:     '#fb4934'
+      green:   '#b8bb26'
+      yellow:  '#fabd2f'
+      blue:    '#83a598'
+      magenta: '#d3869b'
+      cyan:    '#8ec07c'
+      white:   '#ebdbb2'
+# Colors (Gruvbox dark)
+colors: *gruvdark
+## Live reload
+live_config_reload: true
+key_bindings:
+  - { key: Q, mods: Control, chars: "\x11" }
+
+  - { key: A, mods: Command, chars: "\x1ba" }
+  - { key: B, mods: Command, chars: "\x1bb" }
+  - { key: C, mods: Command, chars: "\x1bc" }
+  - { key: D, mods: Command, chars: "\x1bd" }
+  - { key: E, mods: Command, chars: "\x1be" }
+  - { key: F, mods: Command, chars: "\x1bf" }
+  - { key: G, mods: Command, chars: "\x1bg" }
+  - { key: H, mods: Command, chars: "\x1bh" }
+  - { key: I, mods: Command, chars: "\x1bi" }
+  - { key: J, mods: Command, chars: "\x1bj" }
+  - { key: K, mods: Command, chars: "\x1bk" }
+  - { key: L, mods: Command, chars: "\x1bl" }
+  - { key: M, mods: Command, chars: "\x1bm" }
+  - { key: N, mods: Command, chars: "\x1bn" }
+  - { key: O, mods: Command, chars: "\x1bo" }
+  - { key: P, mods: Command, chars: "\x1bp" }
+  - { key: Q, mods: Command, chars: "\x1bq" }
+  - { key: R, mods: Command, chars: "\x1br" }
+  - { key: S, mods: Command, chars: "\x1bs" }
+  - { key: T, mods: Command, chars: "\x1bt" }
+  - { key: U, mods: Command, chars: "\x1bu" }
+  - { key: V, mods: Command, chars: "\x1bv" }
+  - { key: W, mods: Command, chars: "\x1bw" }
+  - { key: X, mods: Command, chars: "\x1bx" }
+  - { key: Y, mods: Command, chars: "\x1by" }
+  - { key: Z, mods: Command, chars: "\x1bz" }
+  - { key: A, mods: Control|Command, chars: "\x1bA" }
+  - { key: B, mods: Control|Command, chars: "\x1bB" }
+  - { key: C, mods: Control|Command, chars: "\x1bC" }
+  - { key: D, mods: Control|Command, chars: "\x1bD" }
+  - { key: E, mods: Control|Command, chars: "\x1bE" }
+  - { key: F, mods: Control|Command, chars: "\x1bF" }
+  - { key: G, mods: Control|Command, chars: "\x1bG" }
+  - { key: H, mods: Control|Command, chars: "\x1bH" }
+  - { key: I, mods: Control|Command, chars: "\x1bI" }
+  - { key: J, mods: Control|Command, chars: "\x1bJ" }
+  - { key: K, mods: Control|Command, chars: "\x1bK" }
+  - { key: L, mods: Control|Command, chars: "\x1bL" }
+  - { key: M, mods: Control|Command, chars: "\x1bM" }
+  - { key: N, mods: Control|Command, chars: "\x1bN" }
+  - { key: O, mods: Control|Command, chars: "\x1bO" }
+  - { key: P, mods: Control|Command, chars: "\x1bP" }
+  - { key: Q, mods: Control|Command, chars: "\x1bQ" }
+  - { key: R, mods: Control|Command, chars: "\x1bR" }
+  - { key: S, mods: Control|Command, chars: "\x1bS" }
+  - { key: T, mods: Control|Command, chars: "\x1bT" }
+  - { key: U, mods: Control|Command, chars: "\x1bU" }
+  - { key: V, mods: Control|Command, chars: "\x1bV" }
+  - { key: W, mods: Control|Command, chars: "\x1bW" }
+  - { key: X, mods: Control|Command, chars: "\x1bX" }
+  - { key: Y, mods: Control|Command, chars: "\x1bY" }
+  - { key: Z, mods: Control|Command, chars: "\x1bZ" }
+  - { key: Key1, mods: Command, chars: "\x1b1" }
+  - { key: Key2, mods: Command, chars: "\x1b2" }
+  - { key: Key3, mods: Command, chars: "\x1b3" }
+  - { key: Key4, mods: Command, chars: "\x1b4" }
+  - { key: Key5, mods: Command, chars: "\x1b5" }
+  - { key: Key6, mods: Command, chars: "\x1b6" }
+  - { key: Key7, mods: Command, chars: "\x1b7" }
+  - { key: Key8, mods: Command, chars: "\x1b8" }
+  - { key: Key9, mods: Command, chars: "\x1b9" }
+  - { key: Key0, mods: Command, chars: "\x1b0" }
+  - { key: Space, mods: Control, chars: "\x00" } # Ctrl + Space
+  - { key: Grave, mods: Command, chars: "\x1b`" } # Command + `
+  - { key: Grave, mods: Command|Shift, chars: "\x1b~" } # Command + ~
+  - { key: Period, mods: Command, chars: "\x1b." } # Command + .
+  - { key: Key8, mods: Command|Shift, chars: "\x1b*" } # Command + *
+  - { key: Key3, mods: Command|Shift, chars: "\x1b#" } # Command + #
+  - { key: Period, mods: Command|Shift, chars: "\x1b>" } # Command + >
+  - { key: Comma, mods: Command|Shift, chars: "\x1b<" } # Command + <
+  - { key: Minus, mods: Command|Shift, chars: "\x1b_" } # Command + _
+  - { key: Key5, mods: Command|Shift, chars: "\x1b%" } # Command + %
+  - { key: Key6, mods: Command|Shift, chars: "\x1b^" } # Command + ^
+  - { key: Backslash, mods: Command, chars: "\x1b\\" } # Command + \
+  - { key: Backslash, mods: Command|Shift, chars: "\x1b|" } # Command + |
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
