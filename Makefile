@@ -1,8 +1,11 @@
 .DEFAULT_GOAL := install-neovim-init
 ostype := $(shell uname)
 git := $(shell which git)
-vim_plugin_path := ~/.vim/pack
-gruvbox := "https://github.com/morhetz/gruvbox"
+nvim_plugin_start_path := ~/.local/share/nvim/site/pack/plugins/start
+plugin_urls := ("https://github.com/morhetz/gruvbox", \
+                "https://github.com/kevinhwang91/rnvimr")
+export  nvim_plugin_start_path
+export  plugin_urls
 detect-os:
 ifeq ($(ostype),Darwin)
 	@echo Detected OS type as Darwin
@@ -37,12 +40,3 @@ install-system-dotfiles: install-tmux-conf
 install-neovim-init: install-system-dotfiles
 	cp init.vim ~/.config/nvim/
 .PHONY := install-neovim-init
-#install-vim-plugins: install-system-dotfiles
-#ifeq ($(git),)
-#	@echo Git does not seem to be installed. Install git to add Vim plugins
-#else
-#	@echo Install Vim plugins
-#	mkdir -p ~/.vim/pack/{colors,filemanagers,plugins}/start
-#	git clone https://github.com/morhetz/gruvbox $(vim_plugin_path)/colors/start/
-#endif
-#.PHONY := install-vim-plugins
