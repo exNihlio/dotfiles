@@ -7,9 +7,6 @@ function main {
   pip3 install -r requirements.txt &>/dev/null
 	for i in ${PLUGIN_URLS[@]}; do
 		PLUGIN=$(echo ${i} | awk -F'/' {'print $NF'})
-    echo ${i}
-		echo ${PLUGIN}
-		echo ${NVIM_PLUGIN_START_PATH}
 		if [[ -d "${NVIM_PUGIN_START_PATH}/${PLUGIN}" ]]; then
 			git fetch ${i} ${NVIM_PLUGIN_START_PATH}/${PLUGIN} 
 		else
