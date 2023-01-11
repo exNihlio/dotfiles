@@ -15,15 +15,22 @@ PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \w\[\033[0;32m\]\n$(g
 alias did="vim +'normal Go' +'r!date' ~/.did.md"
 alias ':q'=exit
 alias emacs='emacs -nw'
-
 GOPATH="$HOME/coding/go"
 
 PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:$GOPATH/bin:$PATH"
 ## Exports
 export GOPATH
 export PATH
-export GIT_EDITOR=vim
-export EDITOR=vim
+if [[ $(which nvim; echo ${?})==0 ]]; then
+  export EDITOR=nvim
+  export GIT_EDITOR=nvim
+else
+  export EDITOR=vim
+  export GIT_EDITOR=vim
+fi
+
+#export GIT_EDITOR=vim
+#export EDITOR=vim
 export AWS_REGION='us-west-2'
 export SAM_CLI_TELEMETRY=0
 ## Functions
