@@ -81,42 +81,42 @@ set background=dark
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " netrw stuff
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-"" When Vim first starts up, open netrw in vertical explore
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
-" Show actual tab characters
-set list
-set listchars=tab:>-,space:·,eol:↴
-" Set Vim to adjust tabs and file recognition
-" Recognize .sls files as yaml
-au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
-" See .template files as yaml
-au BufNewFile,BufRead,BufReadPost *.template set ft=yaml syntax=yaml
-" Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
-au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
-au FileType sh set expandtab shiftwidth=2 tabstop=2 softtabstop=2
-
-" Set color scheme here
-silent! colorscheme gruvbox
-
-" Vertical split windows to the right and
-" horizontal split windows below.
-set splitright
-set splitbelow
-
-" Map Ctrl-t + arrorws to tab movement
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
-" ISO 8601 Timestamp
-command TS put =strftime('%FT%T%z')
-nnoremap <F5> "=strftime('%FT%T%z')<CR>P
-inoremap <F5> <C-R>=strftime('%FT%T%z')<CR>
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+""" When Vim first starts up, open netrw in vertical explore
+""augroup ProjectDrawer
+""  autocmd!
+""  autocmd VimEnter * :Vexplore
+""augroup END
+"" Show actual tab characters
+"set list
+"set listchars=tab:>-,space:·,eol:↴
+"" Set Vim to adjust tabs and file recognition
+"" Recognize .sls files as yaml
+"au BufNewFile,BufRead,BufReadPost *.sls set ft=yaml syntax=yaml
+"" See .template files as yaml
+"au BufNewFile,BufRead,BufReadPost *.template set ft=yaml syntax=yaml
+"" Set anything seen as yaml (now .yaml and .sls files) to use two spaces for tab
+"au FileType yaml set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+"au FileType sh set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+"
+"" Set color scheme here
+"silent! colorscheme gruvbox
+"
+"" Vertical split windows to the right and
+"" horizontal split windows below.
+"set splitright
+"set splitbelow
+"
+"" Map Ctrl-t + arrorws to tab movement
+"map <C-t><up> :tabr<cr>
+"map <C-t><down> :tabl<cr>
+"map <C-t><left> :tabp<cr>
+"map <C-t><right> :tabn<cr>
+"" ISO 8601 Timestamp
+"command TS put =strftime('%FT%T%z')
+"nnoremap <F5> "=strftime('%FT%T%z')<CR>P
+"inoremap <F5> <C-R>=strftime('%FT%T%z')<CR>
