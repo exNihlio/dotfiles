@@ -15,7 +15,7 @@ PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \w\[\033[0;32m\]\n$(g
 #alias did="vim +'normal Go' +'r!date' ~/.did.md"
 alias ':q'=exit
 alias emacs='emacs -nw'
-GOPATH="$HOME/coding/go"
+GOPATH="$HOME/Developer/go"
 
 PATH="$HOME/.local/bin:$HOME/.local/bin/go/bin:$HOME/bin:$GOPATH/bin:$PATH"
 ## Exports
