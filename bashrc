@@ -45,7 +45,7 @@ function git-commit-count {
 }
 
 function docker-ecr-login {
-    aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin $(echo "$(aws sts get-caller-identity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com")
+    aws --profile "${AWS_PROFILE:=default}" ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin $(echo "$(aws sts get-caller-identity --query "Account" | tr -d '"').dkr.ecr.${AWS_REGION}.amazonaws.com")
 }
 
 ##Run Node.js applications inside of Docker
@@ -88,6 +88,7 @@ function npm-docker {
   NODE_DOCKER_IMAGE=$(docker images --filter reference="${NODE_IMAGE_SEARCH}" -q | head -n 1)
   docker run -it --rm ${NODE_DOCKER_IMAGE} npm
 }
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/clairebeamer/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
