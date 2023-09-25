@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := install-neovim-init
+.DEFAULT_GOAL := install-did-md
 ostype := $(shell uname)
 git := $(shell which git)
 nvim_plugin_start_path := ~/.local/share/nvim/site/pack/plugins/start
@@ -39,4 +39,8 @@ install-system-dotfiles: install-tmux-conf
 
 install-neovim-init: install-system-dotfiles
 	cp init.vim ~/.config/nvim/
-.PHONY := install-neovim-init
+.PHONY := install-neovim-initi
+
+install-did-md: install-neovim-init
+	gpg -d did.md.gpg >> did.md
+	mv did.md ~/.did.md
